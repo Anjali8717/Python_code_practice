@@ -1,0 +1,28 @@
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+        self.reviews = []
+
+    def new_review(self, review):
+        self.reviews.append(review)
+
+    def count_review(self):
+        return len(self.reviews)
+    
+    def display_review(self):
+        if not self.reviews:
+            print(f"No reviews for {self.title} yet!")
+        else:
+            print(f"review for {self.title} :")
+            for i, review in enumerate(self.reviews, 1):
+                print(f"{i}, {review}")
+
+my_book = Book("Hello world", "Anjali")
+
+my_book.new_review("The book is amazing")
+my_book.new_review("The book explains everything about the codes very nicely!")
+
+print(f"Total reviews {my_book.count_review()}")
+
+my_book.display_review()
